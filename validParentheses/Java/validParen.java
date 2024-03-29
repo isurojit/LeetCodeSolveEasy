@@ -21,8 +21,11 @@ public class validParen {
 
                 //Here we will pop the top most element and will check if the opening bracket are matching the closing blacket or not. If it is missmatched then will return false
                 char top = parenStack.pop();
-                if((ch == ')' && top !='('))
+                if ((ch == ')' && top != '(') || (ch == '}' && top != '{') || (ch == ']' && top != '[')) {
+                    return false; // Mismatched brackets
+                }
             }
         }
+        return parenStack.isEmpty();
     }
 }
