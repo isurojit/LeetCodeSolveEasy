@@ -1,0 +1,1 @@
+return s.trim().split(" ").slice(-1).join("").length;
