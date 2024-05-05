@@ -3,16 +3,16 @@
  * @return {number}
  */
 var minOperations = function (nums) {
-  let result = 0;
-  for (let i = 0; i < nums.length; i++) {
-    if (nums[i] < 0) {
-      result += nums[i] - 1;
-      nums[i] = 1;
-    }
-    if (nums[i] > 0) {
-      result += 1 - nums[i];
-      nums[i] = 1;
-    }
+  let operations = 0;
+  const length = nums.length;
+
+  for (let i = 1; i < length; i++) {
+    const prev = nums[i - 1];
+    const curr = nums[i];
+    const minCurr = Math.max(prev + 1, curr);
+    operations += minCurr - curr;
+    nums[i] = minCurr;
   }
-  return result;
+
+  return operations;
 };
