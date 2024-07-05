@@ -15,7 +15,6 @@ var kthDistinct = function (arr, k) {
     }
   }
 
-
   for (const a of arr) {
     if (count[a] === 1) {
       k--;
