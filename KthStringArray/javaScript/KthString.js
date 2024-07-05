@@ -15,7 +15,7 @@ var kthDistinct = function (arr, k) {
     }
   }
 
-  // Iterate through the array and find the k-th distinct string
+
   for (const a of arr) {
     if (count[a] === 1) {
       k--;
